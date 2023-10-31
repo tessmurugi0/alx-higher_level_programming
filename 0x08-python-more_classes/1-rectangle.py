@@ -1,44 +1,56 @@
 #!/usr/bin/python3
-"""Define rectangle"""
-
+"""Module for Class rectangle"""
 class Rectangle:
-    """This represents a rectangle"""
+    """Defining class rectangle"""
     def __init__(self, width=0, height=0):
-        """Initializing the rectangle class
+        """Initializing rectangle
         Args:
-            width: width of the rectangle
-            height: height of the rectangle
-        Raises:
-            TypeError: if size is not an integer
-            ValueError: if size is less than zero
+            height (optional): height of rectangle
+            width (optional): width of rectangle
         """
-        self._width = width
-        self._height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Retrieves the width attribute"""
-        return self._width
-
+        """Width attribute getter
+        Return:
+            width of rectangle
+        """
+        return (self.__width)
+    
     @width.setter
     def width(self, value):
-        """Set attribute"""
+        """Attribute setter
+        Args:
+            value: New attribute value
+        Return:
+            New width
+        """
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+            raise TypeError('width must be an integer')
         if value < 0:
-            raise ValueError("width must be >= 0")
-        self._width = value
-
+            raise ValueError('width must be >= 0')
+        self.__width = value
+    
     @property
     def height(self):
-        """Retrieves the height attribute"""
-        return self._height
-
+        """Height attribute getter
+        Return:
+            Height of rectangle
+        """
+        return (self.__height)
+    
     @height.setter
     def height(self, value):
+        """Attribute setter
+        Args:
+            value: New attribute value
+        Return:
+            New height
+        """
         if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+            raise TypeError('height must be an integer')
         if value < 0:
-            raise ValueError("height must be >= 0")
-        self._height = value
-
+            raise ValueError('height must be >= 0')
+        self.__height = value
